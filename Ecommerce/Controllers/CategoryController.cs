@@ -52,7 +52,7 @@ namespace Ecommerce.Controllers
             }
             return View(categoryFromDb);
         }
-        [HttpPost]
+        [HttpPost]  
         public IActionResult Edit(Category obj)
         {
             if (ModelState.IsValid)
