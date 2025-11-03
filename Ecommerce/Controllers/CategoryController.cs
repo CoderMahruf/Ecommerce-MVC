@@ -1,4 +1,4 @@
-﻿using Ecommerce.Data;
+﻿using Ecommerce.DataAccess.Data;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
