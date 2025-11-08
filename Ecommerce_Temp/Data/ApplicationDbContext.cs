@@ -1,7 +1,7 @@
-﻿using Ecommerce_Temp.Models;
+﻿using EcommerceBook_Temp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ecommerce_Temp.Data
+namespace EcommerceBook_Temp.Data
 {
     public class ApplicationDbContext :DbContext
     {

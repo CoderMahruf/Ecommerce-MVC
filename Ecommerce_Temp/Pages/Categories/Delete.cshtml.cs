@@ -1,9 +1,9 @@
-using Ecommerce_Temp.Data;
-using Ecommerce_Temp.Models;
+using EcommerceBook_Temp.Data;
+using EcommerceBook_Temp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Ecommerce_Temp.Pages.Categories
+namespace EcommerceBook_Temp.Pages.Categories
 {
 
     [BindProperties]

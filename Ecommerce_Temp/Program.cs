@@ -1,4 +1,4 @@
-using Ecommerce_Temp.Data;
+using EcommerceBook_Temp.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Utility
+namespace EcommerceBook.Utility
 {
     public static class SD
     {

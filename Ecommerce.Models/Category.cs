@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Ecommerce.Models
+namespace EcommerceBook.Models
 {
     public class Category
     {

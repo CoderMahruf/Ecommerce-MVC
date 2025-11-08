@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Ecommerce_Temp.Pages
+namespace EcommerceBook_Temp.Pages
 {
     public class IndexModel : PageModel
     {
