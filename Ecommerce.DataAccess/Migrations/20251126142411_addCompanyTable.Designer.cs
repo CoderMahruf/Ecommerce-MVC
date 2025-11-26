@@ -4,6 +4,7 @@ using EcommerceBook.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EcommerceBook.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251126142411_addCompanyTable")]
+    partial class addCompanyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,38 +96,6 @@ namespace EcommerceBook.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Tech City",
-                            Name = "Tech Solution",
-                            PhoneNumber = "01545247245",
-                            PostalCode = "1212",
-                            State = "DK",
-                            StreetAddress = "1212 Tech St"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "New City",
-                            Name = "Tech Park",
-                            PhoneNumber = "0174525643",
-                            PostalCode = "1312",
-                            State = "NK",
-                            StreetAddress = "4552 Tech St"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            City = "Panam City",
-                            Name = "Star Tech",
-                            PhoneNumber = "01452625563",
-                            PostalCode = "3628",
-                            State = "FK",
-                            StreetAddress = "1784 Tech St"
-                        });
                 });
 
             modelBuilder.Entity("EcommerceBook.Models.Product", b =>
@@ -478,9 +449,6 @@ namespace EcommerceBook.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CompanyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -496,8 +464,6 @@ namespace EcommerceBook.DataAccess.Migrations
                     b.Property<string>("StreetAddress")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("CompanyId");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
@@ -562,15 +528,6 @@ namespace EcommerceBook.DataAccess.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("EcommerceBook.Models.ApplicationUser", b =>
-                {
-                    b.HasOne("EcommerceBook.Models.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId");
-
-                    b.Navigation("Company");
                 });
 #pragma warning restore 612, 618
         }

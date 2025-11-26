@@ -14,6 +14,7 @@ namespace EcommerceBook.DataAccess.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Company> Companies { get; set; } 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -25,6 +26,39 @@ namespace EcommerceBook.DataAccess.Data
                 new Category { Id = 1, Name = "Action", DisplayOrder = 1 },
                 new Category { Id = 2, Name = "SciFi", DisplayOrder = 2 },
                 new Category { Id = 3, Name = "History", DisplayOrder = 3 }
+                );
+
+            modelBuilder.Entity<Company>().HasData(
+                new Company
+                { 
+                    Id = 1,
+                    Name = "Tech Solution",
+                    StreetAddress = "1212 Tech St",
+                    City="Tech City",
+                    PostalCode="1212",
+                    State="DK",
+                    PhoneNumber="01545247245" 
+                },
+                new Company 
+                { 
+                    Id = 2,
+                    Name = "Tech Park",
+                    StreetAddress = "4552 Tech St",
+                    City="New City",
+                    PostalCode="1312",
+                    State="NK", 
+                    PhoneNumber="0174525643" 
+                },
+                new Company
+                {
+                    Id = 3,
+                    Name = "Star Tech",
+                    StreetAddress = "1784 Tech St",
+                    City="Panam City",
+                    PostalCode="3628",
+                    State="FK",
+                    PhoneNumber="01452625563" 
+                }
                 );
 
             modelBuilder.Entity<Product>().HasData(
